@@ -6,25 +6,27 @@
 
 namespace Spryker\Zed\Calculation\Communication\Plugin;
 
-use Spryker\Zed\Calculation\Business\Model\CalculableInterface;
+use Generated\Shared\Transfer\QuoteTransfer;
+use Spryker\Zed\Calculation\Business\CalculationFacade;
 use Spryker\Zed\Calculation\Dependency\Plugin\CalculatorPluginInterface;
 use Spryker\Zed\Kernel\Communication\AbstractPlugin;
+use Spryker\Zed\Calculation\Communication\CalculationCommunicationFactory;
 
 /**
  * @method \Spryker\Zed\Calculation\Business\CalculationFacade getFacade()
  * @method \Spryker\Zed\Calculation\Communication\CalculationCommunicationFactory getFactory()
  */
-class ItemPriceToPayCalculatorPlugin extends AbstractPlugin implements CalculatorPluginInterface
+class ProductOptionGrossSumCalculatorPlugin extends AbstractPlugin implements CalculatorPluginInterface
 {
 
     /**
-     * @param \Spryker\Zed\Calculation\Business\Model\CalculableInterface $calculableContainer
+     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
      *
      * @return void
      */
-    public function recalculate(CalculableInterface $calculableContainer)
+    public function recalculate(QuoteTransfer $quoteTransfer)
     {
-        $this->getFacade()->recalculateItemPriceToPay($calculableContainer);
+        $this->getFacade()->calculateOptionGrossSum($quoteTransfer);
     }
 
 }
