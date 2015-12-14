@@ -13,20 +13,20 @@ use Spryker\Zed\Kernel\Communication\AbstractPlugin;
 use Spryker\Zed\Calculation\Communication\CalculationCommunicationFactory;
 
 /**
- * @method \Spryker\Zed\Calculation\Business\CalculationFacade getFacade()
- * @method \Spryker\Zed\Calculation\Communication\CalculationCommunicationFactory getFactory()
+ * @method CalculationFacade getFacade()
+ * @method CalculationCommunicationFactory getFactory()
  */
-class RemoveTotalsCalculatorPlugin extends AbstractPlugin implements CalculatorPluginInterface
+class ItemGrossAmountsCalculatorPlugin extends AbstractPlugin implements CalculatorPluginInterface
 {
 
     /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
+     * @param QuoteTransfer $quoteTransfer
      *
      * @return void
      */
     public function recalculate(QuoteTransfer $quoteTransfer)
     {
-        $this->getFacade()->removeTotals($quoteTransfer);
+        $this->getFacade()->calculateItemGrossAmounts($quoteTransfer);
     }
 
 }
