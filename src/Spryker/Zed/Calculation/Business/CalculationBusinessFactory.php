@@ -25,7 +25,7 @@ use Spryker\Zed\Calculation\CalculationConfig;
 /**
  * @method CalculationConfig getConfig()
  */
-class CalculationDependencyContainer extends AbstractBusinessFactory
+class CalculationBusinessFactory extends AbstractBusinessFactory
 {
 
     /**
