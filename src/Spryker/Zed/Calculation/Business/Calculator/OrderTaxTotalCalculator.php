@@ -12,7 +12,7 @@ use Generated\Shared\Transfer\QuoteTransfer;
 use Generated\Shared\Transfer\TaxTotalTransfer;
 use Spryker\Zed\Calculation\Business\Calculator\CalculatorInterface;
 
-class TaxTotalCalculator implements CalculatorInterface
+class OrderTaxTotalCalculator implements CalculatorInterface
 {
 
     /**
@@ -43,7 +43,7 @@ class TaxTotalCalculator implements CalculatorInterface
     {
         $totalTaxAmount = 0;
         foreach ($items as $itemTransfer) {
-            $totalTaxAmount += $itemTransfer->getSumTaxAmountFullAggregation();
+            $totalTaxAmount += $itemTransfer->getUnitTaxAmountFullAggregation() - $itemTransfer->getTaxAmountAfterCancellation();
         }
         return $totalTaxAmount;
     }
@@ -57,7 +57,7 @@ class TaxTotalCalculator implements CalculatorInterface
     {
         $totalTaxAmount = 0;
         foreach ($expenses as $expenseTransfer) {
-            $totalTaxAmount += $expenseTransfer->getSumTaxAmount();
+            $totalTaxAmount += $expenseTransfer->getUnitTaxAmount() - $expenseTransfer->getTaxAmountAfterCancellation();
         }
         return $totalTaxAmount;
     }
