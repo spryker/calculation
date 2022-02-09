@@ -66,7 +66,7 @@ class CalculationBusinessFactory extends AbstractBusinessFactory
     }
 
     /**
-     * @return \Spryker\Zed\Calculation\Business\Model\Calculator\CalculatorInterface
+     * @return \Spryker\Zed\Calculation\Business\Model\Calculator\CalculatorInterface|\Spryker\Zed\Calculation\Business\Model\Calculator\PriceCalculator
      */
     public function createPriceCalculator()
     {
@@ -99,7 +99,7 @@ class CalculationBusinessFactory extends AbstractBusinessFactory
     }
 
     /**
-     * @return \Spryker\Zed\Calculation\Business\Model\Calculator\CalculatorInterface
+     * @return \Spryker\Zed\Calculation\Business\Model\Calculator\CalculatorInterface|\Spryker\Zed\Calculation\Business\Model\Calculator\NetPrice\PriceNetCalculator
      */
     protected function createPriceNetCalculator()
     {
@@ -107,7 +107,7 @@ class CalculationBusinessFactory extends AbstractBusinessFactory
     }
 
     /**
-     * @return \Spryker\Zed\Calculation\Business\Model\Calculator\CalculatorInterface
+     * @return \Spryker\Zed\Calculation\Business\Model\Calculator\CalculatorInterface|\Spryker\Zed\Calculation\Business\Model\Calculator\NetPrice\SumNetPriceCalculator
      */
     protected function createSumNetPriceCalculator()
     {
@@ -115,7 +115,7 @@ class CalculationBusinessFactory extends AbstractBusinessFactory
     }
 
     /**
-     * @return \Spryker\Zed\Calculation\Business\Model\Calculator\CalculatorInterface
+     * @return \Spryker\Zed\Calculation\Business\Model\Calculator\CalculatorInterface|\Spryker\Zed\Calculation\Business\Model\Calculator\GrossPrice\PriceGrossCalculator
      */
     public function createPriceGrossCalculator()
     {
@@ -125,7 +125,7 @@ class CalculationBusinessFactory extends AbstractBusinessFactory
     /**
      * @deprecated Use {@link createPriceGrossCalculator()} instead.
      *
-     * @return \Spryker\Zed\Calculation\Business\Model\Calculator\CalculatorInterface
+     * @return \Spryker\Zed\Calculation\Business\Model\Calculator\CalculatorInterface|\Spryker\Zed\Calculation\Business\Model\Calculator\GrossPrice\PriceGrossCalculator
      */
     protected function createPriceCrossCalculator()
     {
@@ -133,7 +133,7 @@ class CalculationBusinessFactory extends AbstractBusinessFactory
     }
 
     /**
-     * @return \Spryker\Zed\Calculation\Business\Model\Calculator\CalculatorInterface
+     * @return \Spryker\Zed\Calculation\Business\Model\Calculator\CalculatorInterface|\Spryker\Zed\Calculation\Business\Model\Calculator\GrossPrice\SumGrossPriceCalculator
      */
     protected function createSumGrossPriceCalculator()
     {
@@ -141,7 +141,7 @@ class CalculationBusinessFactory extends AbstractBusinessFactory
     }
 
     /**
-     * @return \Spryker\Zed\Calculation\Business\Model\Calculator\CalculatorInterface
+     * @return \Spryker\Zed\Calculation\Business\Model\Calculator\CalculatorInterface|\Spryker\Zed\Calculation\Business\Model\Aggregator\ItemProductOptionPriceAggregator
      */
     public function createProductOptionPriceAggregator()
     {
@@ -149,7 +149,7 @@ class CalculationBusinessFactory extends AbstractBusinessFactory
     }
 
     /**
-     * @return \Spryker\Zed\Calculation\Business\Model\Calculator\CalculatorInterface
+     * @return \Spryker\Zed\Calculation\Business\Model\Calculator\CalculatorInterface|\Spryker\Zed\Calculation\Business\Model\Aggregator\DiscountAmountAggregator\DiscountAmountAggregatorForGrossAmount
      */
     public function createDiscountAmountAggregator()
     {
@@ -157,7 +157,7 @@ class CalculationBusinessFactory extends AbstractBusinessFactory
     }
 
     /**
-     * @return \Spryker\Zed\Calculation\Business\Model\Calculator\CalculatorInterface
+     * @return \Spryker\Zed\Calculation\Business\Model\Calculator\CalculatorInterface|\Spryker\Zed\Calculation\Business\Model\Aggregator\DiscountAmountAggregator
      */
     public function createDiscountAmountAggregatorForGenericAmount()
     {
@@ -175,7 +175,7 @@ class CalculationBusinessFactory extends AbstractBusinessFactory
     }
 
     /**
-     * @return \Spryker\Zed\Calculation\Business\Model\Calculator\CalculatorInterface
+     * @return \Spryker\Zed\Calculation\Business\Model\Calculator\CalculatorInterface|\Spryker\Zed\Calculation\Business\Model\Aggregator\ItemDiscountAmountFullAggregator
      */
     public function createItemDiscountAmountFullAggregator()
     {
@@ -183,7 +183,7 @@ class CalculationBusinessFactory extends AbstractBusinessFactory
     }
 
     /**
-     * @return \Spryker\Zed\Calculation\Business\Model\Calculator\CalculatorInterface
+     * @return \Spryker\Zed\Calculation\Business\Model\Calculator\CalculatorInterface|\Spryker\Zed\Calculation\Business\Model\Aggregator\ItemTaxAmountFullAggregator
      */
     public function createItemTaxAmountFullAggregator()
     {
@@ -191,7 +191,7 @@ class CalculationBusinessFactory extends AbstractBusinessFactory
     }
 
     /**
-     * @return \Spryker\Zed\Calculation\Business\Model\Calculator\CalculatorInterface
+     * @return \Spryker\Zed\Calculation\Business\Model\Calculator\CalculatorInterface|\Spryker\Zed\Calculation\Business\Model\Aggregator\ItemSubtotalAggregator
      */
     public function createSumAggregator()
     {
@@ -199,7 +199,7 @@ class CalculationBusinessFactory extends AbstractBusinessFactory
     }
 
     /**
-     * @return \Spryker\Zed\Calculation\Business\Model\Calculator\CalculatorInterface
+     * @return \Spryker\Zed\Calculation\Business\Model\Calculator\CalculatorInterface|\Spryker\Zed\Calculation\Business\Model\Aggregator\PriceToPayAggregator
      */
     public function createPriceToPayAggregator()
     {
@@ -207,7 +207,7 @@ class CalculationBusinessFactory extends AbstractBusinessFactory
     }
 
     /**
-     * @return \Spryker\Zed\Calculation\Business\Model\Calculator\CalculatorInterface
+     * @return \Spryker\Zed\Calculation\Business\Model\Calculator\CalculatorInterface|\Spryker\Zed\Calculation\Business\Model\Calculator\SubtotalCalculator
      */
     public function createSubtotalCalculator()
     {
@@ -215,7 +215,7 @@ class CalculationBusinessFactory extends AbstractBusinessFactory
     }
 
     /**
-     * @return \Spryker\Zed\Calculation\Business\Model\Calculator\CalculatorInterface
+     * @return \Spryker\Zed\Calculation\Business\Model\Calculator\CalculatorInterface|\Spryker\Zed\Calculation\Business\Model\Calculator\ExpenseTotalCalculator
      */
     public function createExpenseTotalCalculator()
     {
@@ -223,7 +223,7 @@ class CalculationBusinessFactory extends AbstractBusinessFactory
     }
 
     /**
-     * @return \Spryker\Zed\Calculation\Business\Model\Calculator\CalculatorInterface
+     * @return \Spryker\Zed\Calculation\Business\Model\Calculator\CalculatorInterface|\Spryker\Zed\Calculation\Business\Model\Calculator\DiscountTotalCalculator
      */
     public function createDiscountTotalCalculator()
     {
@@ -231,7 +231,7 @@ class CalculationBusinessFactory extends AbstractBusinessFactory
     }
 
     /**
-     * @return \Spryker\Zed\Calculation\Business\Model\Calculator\CalculatorInterface
+     * @return \Spryker\Zed\Calculation\Business\Model\Calculator\CalculatorInterface|\Spryker\Zed\Calculation\Business\Model\Calculator\TaxTotalCalculator
      */
     public function createTaxTotalCalculator()
     {
@@ -239,7 +239,7 @@ class CalculationBusinessFactory extends AbstractBusinessFactory
     }
 
     /**
-     * @return \Spryker\Zed\Calculation\Business\Model\Calculator\CalculatorInterface
+     * @return \Spryker\Zed\Calculation\Business\Model\Calculator\CalculatorInterface|\Spryker\Zed\Calculation\Business\Model\Calculator\RefundTotalCalculator
      */
     public function createRefundTotalCalculator()
     {
@@ -247,7 +247,7 @@ class CalculationBusinessFactory extends AbstractBusinessFactory
     }
 
     /**
-     * @return \Spryker\Zed\Calculation\Business\Model\Calculator\CalculatorInterface
+     * @return \Spryker\Zed\Calculation\Business\Model\Calculator\CalculatorInterface|\Spryker\Zed\Calculation\Business\Model\Calculator\RefundableAmountCalculator
      */
     public function createRefundableAmountCalculator()
     {
@@ -255,7 +255,7 @@ class CalculationBusinessFactory extends AbstractBusinessFactory
     }
 
     /**
-     * @return \Spryker\Zed\Calculation\Business\Model\Calculator\CalculatorInterface
+     * @return \Spryker\Zed\Calculation\Business\Model\Calculator\CalculatorInterface|\Spryker\Zed\Calculation\Business\Model\Calculator\GrandTotalCalculator
      */
     public function createGrandTotalCalculator()
     {
@@ -263,7 +263,7 @@ class CalculationBusinessFactory extends AbstractBusinessFactory
     }
 
     /**
-     * @return \Spryker\Zed\Calculation\Business\Model\Calculator\CalculatorInterface
+     * @return \Spryker\Zed\Calculation\Business\Model\Calculator\CalculatorInterface|\Spryker\Zed\Calculation\Business\Model\Calculator\InitialGrandTotalCalculator
      */
     public function createInitialGrandTotalCalculator()
     {
@@ -271,7 +271,7 @@ class CalculationBusinessFactory extends AbstractBusinessFactory
     }
 
     /**
-     * @return \Spryker\Zed\Calculation\Business\Model\Calculator\CalculatorInterface
+     * @return \Spryker\Zed\Calculation\Business\Model\Calculator\CalculatorInterface|\Spryker\Zed\Calculation\Business\Model\Calculator\CanceledTotalCalculator
      */
     public function createCanceledTotalCalculator()
     {
@@ -279,7 +279,7 @@ class CalculationBusinessFactory extends AbstractBusinessFactory
     }
 
     /**
-     * @return \Spryker\Zed\Calculation\Business\Model\Calculator\CalculatorInterface
+     * @return \Spryker\Zed\Calculation\Business\Model\Calculator\CalculatorInterface|\Spryker\Zed\Calculation\Business\Model\Calculator\OrderTaxTotalCalculator
      */
     public function createOrderTaxTotalCalculator()
     {
@@ -335,7 +335,7 @@ class CalculationBusinessFactory extends AbstractBusinessFactory
     }
 
     /**
-     * @return array<\Spryker\Zed\CalculationExtension\Dependency\Plugin\CalculationPluginInterface>
+     * @return array<\Spryker\Zed\Calculation\Dependency\Plugin\CalculatorPluginInterface|\Spryker\Zed\CalculationExtension\Dependency\Plugin\CalculationPluginInterface>
      */
     protected function getProvidedOrderCalculatorPluginStack()
     {
