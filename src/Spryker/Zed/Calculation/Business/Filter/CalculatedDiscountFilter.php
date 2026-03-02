@@ -13,11 +13,6 @@ use Generated\Shared\Transfer\CalculatedDiscountTransfer;
 
 class CalculatedDiscountFilter implements CalculatedDiscountFilterInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\CalculatedDiscountCollectionTransfer $calculatedDiscountCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\CalculatedDiscountCollectionTransfer
-     */
     public function filterOutEmptyCalculatedDiscounts(
         CalculatedDiscountCollectionTransfer $calculatedDiscountCollectionTransfer
     ): CalculatedDiscountCollectionTransfer {

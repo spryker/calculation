@@ -11,11 +11,6 @@ use Generated\Shared\Transfer\CalculatedDiscountCollectionTransfer;
 
 interface CalculatedDiscountFilterInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\CalculatedDiscountCollectionTransfer $calculatedDiscountCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\CalculatedDiscountCollectionTransfer
-     */
     public function filterOutEmptyCalculatedDiscounts(
         CalculatedDiscountCollectionTransfer $calculatedDiscountCollectionTransfer
     ): CalculatedDiscountCollectionTransfer;

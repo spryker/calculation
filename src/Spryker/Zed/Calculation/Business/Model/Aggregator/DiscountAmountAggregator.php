@@ -37,9 +37,6 @@ class DiscountAmountAggregator implements CalculatorInterface
      */
     protected $calculatedDiscountFilter;
 
-    /**
-     * @param \Spryker\Zed\Calculation\Business\Filter\CalculatedDiscountFilterInterface $calculatedDiscountFilter
-     */
     public function __construct(CalculatedDiscountFilterInterface $calculatedDiscountFilter)
     {
         $this->calculatedDiscountFilter = $calculatedDiscountFilter;
@@ -248,13 +245,6 @@ class DiscountAmountAggregator implements CalculatorInterface
         return $itemUnitDiscountAmountAggregation;
     }
 
-    /**
-     * @param int $discountAmount
-     * @param int $itemAggregatedAmount
-     * @param int $maxAmount
-     *
-     * @return int
-     */
     protected function getDiscountAmountToApply(int $discountAmount, int $itemAggregatedAmount, int $maxAmount): int
     {
         $itemAggregatedAmount += $discountAmount;
@@ -270,12 +260,6 @@ class DiscountAmountAggregator implements CalculatorInterface
         return static::DEFAULT_AMOUNT;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CalculatedDiscountTransfer $calculatedDiscountTransfer
-     * @param int $discountAmount
-     *
-     * @return void
-     */
     protected function setCalculatedDiscounts(CalculatedDiscountTransfer $calculatedDiscountTransfer, int $discountAmount): void
     {
         $idDiscount = $calculatedDiscountTransfer->getIdDiscount();

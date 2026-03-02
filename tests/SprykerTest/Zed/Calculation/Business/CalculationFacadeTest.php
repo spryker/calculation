@@ -79,9 +79,6 @@ class CalculationFacadeTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     public function testCalculatePriceShouldSetDefaultStorePriceValues(): void
     {
         $calculationFacade = $this->createCalculationFacade(
@@ -135,9 +132,6 @@ class CalculationFacadeTest extends Unit
         $this->assertSame($calculatedExpenseTransfer->getSumPrice(), $calculatedExpenseTransfer->getSumGrossPrice());
     }
 
-    /**
-     * @return void
-     */
     public function testCalculateProductOptionPriceAggregationShouldSumAllOptionPrices(): void
     {
         $calculationFacade = $this->createCalculationFacade(
@@ -165,9 +159,6 @@ class CalculationFacadeTest extends Unit
         $this->assertSame(40, $calculatedItemTransfer->getSumProductOptionPriceAggregation());
     }
 
-    /**
-     * @return void
-     */
     public function testCalculateSumDiscountAmountShouldSumAllItemDiscounts(): void
     {
         $calculationFacade = $this->createCalculationFacade(
@@ -234,9 +225,6 @@ class CalculationFacadeTest extends Unit
         $this->assertSame(20, $calculatedExpenseTransfer->getSumDiscountAmountAggregation());
     }
 
-    /**
-     * @return void
-     */
     public function testCalculateFullDiscountAmountShouldSumAllItemsAndAdditions(): void
     {
         $calculationFacade = $this->createCalculationFacade(
@@ -264,9 +252,6 @@ class CalculationFacadeTest extends Unit
         $this->assertSame(40, $calculatedItemTransfer->getSumDiscountAmountFullAggregation());
     }
 
-    /**
-     * @return void
-     */
     public function testCalculateTaxAmountFullAggregationShouldSumAllTaxesWithAdditions(): void
     {
         $calculationFacade = $this->createCalculationFacade(
@@ -293,9 +278,6 @@ class CalculationFacadeTest extends Unit
         $this->assertSame(20, $calculatedItemTransfer->getSumTaxAmountFullAggregation());
     }
 
-    /**
-     * @return void
-     */
     public function testCalculateSumAggregationShouldSumItemAndAllAdditionPrices(): void
     {
         $calculationFacade = $this->createCalculationFacade(
@@ -329,9 +311,6 @@ class CalculationFacadeTest extends Unit
         $this->assertSame(15, $calculatedItemTransfer->getUnitSubtotalAggregation());
     }
 
-    /**
-     * @return void
-     */
     public function testCalculatePriceToPayAggregation(): void
     {
         $calculationFacade = $this->createCalculationFacade(
@@ -355,9 +334,6 @@ class CalculationFacadeTest extends Unit
         $this->assertSame(35, $calculatedItemTransfer->getSumPriceToPayAggregation());
     }
 
-    /**
-     * @return void
-     */
     public function testCalculateSubtotalShouldSumAllItemsWithAdditions(): void
     {
         $calculationFacade = $this->createCalculationFacade(
@@ -385,9 +361,6 @@ class CalculationFacadeTest extends Unit
         $this->assertSame(20, $calculatedTotalsTransfer->getSubtotal());
     }
 
-    /**
-     * @return void
-     */
     public function testCalculateExpenseTotalShouldSumAllOrderExpenses(): void
     {
         $calculationFacade = $this->createCalculationFacade(
@@ -415,9 +388,6 @@ class CalculationFacadeTest extends Unit
         $this->assertSame(20, $calculatedOrderExpenseTotal);
     }
 
-    /**
-     * @return void
-     */
     public function testCalculateDiscountTotalShouldSumAllDiscounts(): void
     {
         $calculationFacade = $this->createCalculationFacade(
@@ -449,9 +419,6 @@ class CalculationFacadeTest extends Unit
         $this->assertSame(30, $calculatedTotalDiscountAmount);
     }
 
-    /**
-     * @return void
-     */
     public function testCalculateTaxTotalShouldSumAllTaxAmounts(): void
     {
         $calculationFacade = $this->createCalculationFacade(
@@ -484,9 +451,6 @@ class CalculationFacadeTest extends Unit
         $this->assertSame(30, $calculatedTaxAmount);
     }
 
-    /**
-     * @return void
-     */
     public function testCalculateRefundTotalShouldSumAllRefundableAmounts(): void
     {
         $calculationFacade = $this->createCalculationFacade(
@@ -524,9 +488,6 @@ class CalculationFacadeTest extends Unit
         $this->assertSame(30, $calculatedRefundTotal);
     }
 
-    /**
-     * @return void
-     */
     public function testCalculateRefundableAmount(): void
     {
         $calculationFacade = $this->createCalculationFacade(
@@ -557,9 +518,6 @@ class CalculationFacadeTest extends Unit
         $this->assertSame(8, $calculatedExpenseTransfer->getRefundableAmount());
     }
 
-    /**
-     * @return void
-     */
     public function testCalculateGrandTotal(): void
     {
         $calculationFacade = $this->createCalculationFacade(
@@ -589,9 +547,6 @@ class CalculationFacadeTest extends Unit
         $this->assertSame(250, $calculatedGrandTotal);
     }
 
-    /**
-     * @return void
-     */
     public function testCalculateInitialGrandTotal(): void
     {
         $calculationFacade = $this->createCalculationFacade(
@@ -621,11 +576,6 @@ class CalculationFacadeTest extends Unit
         $this->assertSame(550, $calculatedGrandTotal);
     }
 
-    /**
-     * @param array $calculatorPlugins
-     *
-     * @return \Spryker\Zed\Calculation\Business\CalculationFacade
-     */
     protected function createCalculationFacade(array $calculatorPlugins): CalculationFacade
     {
         $calculationFacade = new CalculationFacade();
@@ -651,9 +601,6 @@ class CalculationFacadeTest extends Unit
         return $calculationFacade;
     }
 
-    /**
-     * @return void
-     */
     public function testRemoveCanceledAmountResetsCancelledAmount(): void
     {
         // Assign
@@ -671,9 +618,6 @@ class CalculationFacadeTest extends Unit
         $this->assertSame($expectedCancelledAmount, $actualCancelledAmount);
     }
 
-    /**
-     * @return void
-     */
     public function testRecalculateOrderSuccessfulMappingStoreNameFromCalculableObjectToOrder(): void
     {
         // Arrange
@@ -690,9 +634,6 @@ class CalculationFacadeTest extends Unit
         $this->assertSame($storeTransfer->getNameOrFail(), $calculatedOrderTransfer->getStore());
     }
 
-    /**
-     * @return void
-     */
     public function testCalculateDiscountAmountAggregationForGenericAmountShouldApplyDiscounts(): void
     {
         // Arrange
@@ -773,9 +714,6 @@ class CalculationFacadeTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testCalculateDiscountAmountAggregationForGenericAmountShouldDistributeDiscountTotalWhenItemPriceIsLowerThanDiscountAmount(): void
     {
         // Arrange
@@ -864,9 +802,6 @@ class CalculationFacadeTest extends Unit
         $this->assertSame(50, $calculatedDiscounts[1]->getSumAmount());
     }
 
-    /**
-     * @return void
-     */
     public function testCalculateDiscountAmountAggregationForGenericAmountShouldRemoveDiscountTotalWhenDiscountCannotBeApplied(): void
     {
         // Arrange
@@ -926,13 +861,6 @@ class CalculationFacadeTest extends Unit
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CalculableObjectTransfer $calculableObjectTransfer
-     * @param int $expectedCartRuleDiscountAmount
-     * @param int $expectedVoucherCodeDiscountAmount
-     *
-     * @return void
-     */
     protected function assertCalculableObjectDiscountsAmounts(
         CalculableObjectTransfer $calculableObjectTransfer,
         int $expectedCartRuleDiscountAmount,
@@ -942,13 +870,6 @@ class CalculationFacadeTest extends Unit
         $this->assertSame($expectedVoucherCodeDiscountAmount, $calculableObjectTransfer->getVoucherDiscounts()->offsetGet(0)->getAmount());
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     * @param int $expectedSumDiscountAmountAggregation
-     * @param int $expectedCalculatedDiscountsCount
-     *
-     * @return void
-     */
     protected function assertItemCalculatedDiscounts(
         ItemTransfer $itemTransfer,
         int $expectedSumDiscountAmountAggregation,

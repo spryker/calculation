@@ -18,9 +18,6 @@ class GrandTotalCalculator implements CalculatorInterface
      */
     protected $utilTextService;
 
-    /**
-     * @param \Spryker\Zed\Calculation\Dependency\Service\CalculationToUtilTextInterface $utilTextService
-     */
     public function __construct(CalculationToUtilTextInterface $utilTextService)
     {
         $this->utilTextService = $utilTextService;

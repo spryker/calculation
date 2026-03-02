@@ -60,11 +60,6 @@ class CalculationDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addQuotePostRecalculatePlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_QUOTE_POST_RECALCULATE, function (Container $container) {

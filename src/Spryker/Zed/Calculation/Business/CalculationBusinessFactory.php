@@ -166,9 +166,6 @@ class CalculationBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\Calculation\Business\Filter\CalculatedDiscountFilterInterface
-     */
     public function createCalculatedDiscountFilter(): CalculatedDiscountFilterInterface
     {
         return new CalculatedDiscountFilter();

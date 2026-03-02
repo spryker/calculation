@@ -20,9 +20,6 @@ class CheckoutGrandTotalPreCondition implements CheckoutGrandTotalPreConditionIn
      */
     protected $stackExecutor;
 
-    /**
-     * @param \Spryker\Zed\Calculation\Business\Model\Executor\QuoteCalculatorExecutorInterface $stackExecutor
-     */
     public function __construct(QuoteCalculatorExecutorInterface $stackExecutor)
     {
         $this->stackExecutor = $stackExecutor;

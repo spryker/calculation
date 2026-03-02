@@ -45,11 +45,6 @@ class OrderCalculatorExecutor implements OrderCalculatorExecutorInterface
         return $orderTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     *
-     * @return \Generated\Shared\Transfer\CalculableObjectTransfer
-     */
     protected function mapCalculableObjectTransfer(OrderTransfer $orderTransfer): CalculableObjectTransfer
     {
         $itemTransfers = $orderTransfer->getItems();
@@ -67,12 +62,6 @@ class OrderCalculatorExecutor implements OrderCalculatorExecutorInterface
         return $calculableObjectTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     * @param \Generated\Shared\Transfer\CalculableObjectTransfer $calculableObjectTransfer
-     *
-     * @return \Generated\Shared\Transfer\OrderTransfer
-     */
     protected function mapOrderTransfer(OrderTransfer $orderTransfer, CalculableObjectTransfer $calculableObjectTransfer): OrderTransfer
     {
         $itemTransfers = $calculableObjectTransfer->getItems();

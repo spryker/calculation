@@ -32,12 +32,6 @@ class CalculationBusinessTester extends Actor
 {
     use _generated\CalculationBusinessTesterActions;
 
-    /**
-     * @param array $itemData
-     * @param array $calculatedDiscountsData
-     *
-     * @return \Generated\Shared\Transfer\ItemTransfer
-     */
     public function createItemTransferWithCalculatedDiscounts(array $itemData = [], array $calculatedDiscountsData = []): ItemTransfer
     {
         $itemTransfer = (new ItemTransfer())->fromArray($itemData);

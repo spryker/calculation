@@ -111,11 +111,6 @@ class QuoteCalculatorExecutor implements QuoteCalculatorExecutorInterface
         return $calculableObjectTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteTransfer
-     */
     protected function executeQuotePostRecalculatePlugins(QuoteTransfer $quoteTransfer): QuoteTransfer
     {
         foreach ($this->quotePostRecalculatePlugins as $quotePostRecalculatePlugin) {
